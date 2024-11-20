@@ -1,16 +1,257 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>My sites</title>
+        <title>Minefan07's page</title>
+        <style>
+            body {
+                background: #202015; /* nts: looks noice */
+                color: #bbbbbb;
+                top: 50px;
+                display: inline-block;
+                height: 100%;
+                margin:0; padding:0;
+            }
+
+            a {
+                color: #408040;
+            }
+
+            a:hover {
+                color: #508050;
+            }
+
+            a:active {
+                color: #804040;
+            }
+
+            data {
+                position: absolute;
+                margin: 0; padding: 0;
+                margin-left: 15px;
+                margin-right: 15px;
+                margin-bottom: 15px;
+                top: 35px;
+                display: inline-block;
+            }
+
+            heading {
+                position: relative;
+                display: inline-block;
+                top: 0px;
+                font-size: 20px;
+                /*font-family: Arial;*/
+                padding: 10px;
+                margin:0;
+                margin-top: 10px;
+                padding-top: 0px;
+                padding-bottom: 3px;
+                padding-right:0px;
+                margin-left: -10px;
+                /*white-space: pre; */
+                width: calc(100% - 15px);
+            }
+
+            bigheading {
+                position: relative;
+                display: inline-block;
+                top: 0px;
+                font-size: 26px;
+                /*font-family: Arial;*/
+                padding: 10px;
+                margin: 0;
+                margin-top: 15px;
+                padding-top: 0px;
+                padding-bottom: 5px;
+                padding-right: 0px;
+                margin-left: -10px;
+                margin-bottom: -10px;
+                /*white-space: pre; */
+                width: calc(100% - 15px);
+            }
+
+            btext {
+                position: relative;
+                display: inline-block;
+                width: calc(100% - 15px);
+                /*margin-right: 0px; */
+                /*white-space: pre; */
+                /*background: white; */
+                /*clear:both;*/
+            }
+
+            titlebar {
+                position: fixed;
+                /*background: #303580;*/
+                background: #356030;
+                width: 100%;
+                font-family: Georgia;
+                color: #dddddd;
+                margin: 0; padding: 10px; top: 0; left: 0;
+                padding-bottom: 5px;
+                /*box-shadow: #303580 0px 0px 5px 5px;*/
+                box-shadow: #356030 0px 0px 5px 5px;
+                z-index: 1;
+                /* note to self (nts): it scales automatically 
+                * therefore there is no height definition
+                */
+            }
+
+            imagewrapper {
+                position: relative;
+                color: #cccccc;
+                top: 5px;
+                margin-top: 0px;
+                padding: 20px;
+                padding-bottom: 10px;
+                padding-top: 15px;
+                margin-bottom: 10px;
+                border-radius: 20px;
+                background: #356030;
+                display: inline-block;
+                text-align: center;
+            }
+
+            imagetitle {
+                position: relative;
+                display: inline-block;
+                font-size: 16px;
+                margin-bottom: 5px;
+            }
+
+            imagecaption {
+                position: relative;
+                display: inline-block;
+                top: -2px;
+                margin-bottom: -2px;
+                font-size: 14px;
+                font-style: italic;
+            }
+
+            message {
+                position: relative;
+                color: #cccccc;
+                top: 5px;
+                margin-top: 0px;
+                padding: 20px;
+                padding-top: 15px;
+                padding-bottom: 20px;
+                margin-bottom: 10px;
+                border-radius: 20px;
+                background: #356030;
+                display: inline-block;
+            }
+
+            messagesender {
+                font-weight: bold;
+            }
+
+            messagetime {
+                font-style: italic;
+            }
+
+            messagecont {
+                display: inline-block;
+                position: relative;
+                top: 5px;
+            }
+
+            videoplayer {
+                position: relative;
+                color: #cccccc;
+                top: 5px;
+                margin-top: 0px;
+                padding: 20px;
+                padding-bottom: 10px;
+                padding-top: 15px;
+                margin-bottom: 10px;
+                border-radius: 20px;
+                background: #356030;
+                display: inline-block;
+                text-align: center;
+            }
+
+            videotitle {
+                position: relative;
+                display: inline-block;
+                text-align: left;
+                margin-bottom: 5px;
+                font-style: italic;
+            }
+
+            videocaption {
+                position: relative;
+                display: inline-block;
+                top: -2px;
+                margin-bottom: -2px;
+                font-size: 14px;
+                font-style: italic;
+            }
+
+            .vid {
+                width: 640px;
+                height: 360px;
+            }
+
+            .grapher {
+                background: black;
+            }
+        </style>
     </head>
-    <body>
-        <div>
-            <h3>My sites</h3>
-            <a href="https://minefan07.github.io/windows11inhtml" target="_blank">Windows 11 in html</a><br>
-            <a href="https://minefan07.github.io/rr" target="_blank">Rickroll</a><br>
-            <a href="https://minefan07.github.io/mcmp" target="_blank">Minecraft Music Player</a><br>
-            <a href="https://minefan07.github.io/jukebox" target="_blank">Jukebox (MCMP 2.0)</a><br>
-            <a href="https://minefan07.github.io/smt" target="_blank">(Dysfunctional) Simple Multiplication Tester</a><br>
-        </div>
+    <body onLoad='ol()'>
+
+        <script>
+            function ol() {
+                const elements = document.querySelectorAll('heading');
+                elements.forEach(element => {
+                    // Create a new element
+                    let height = element.offsetHeight;
+                    let color = "#208020";
+
+                    height -= 2;
+                    //alert("height=" + height);
+                    const newElement = document.createElement('span');
+                    newElement.style = "position:relative;display:inline-block;width:3px;height:" + height + "px;background:" + color + ";left:0px;top:5px;margin-right:5px;user-select:none;";
+                    // Append the new element to the existing element
+                    element.prepend(newElement); 
+                });
+
+                const elements2 = document.querySelectorAll('bigheading');
+                elements2.forEach(element2 => {
+                    // Create a new element
+                    let height = element2.offsetHeight;
+                    let color = "#208020";
+
+                    height -= 5;
+                    //alert("height=" + height);
+                    const newElement2 = document.createElement('span');
+                    newElement2.style = "position:relative;display:inline-block;width:5px;height:" + height + "px;background:" + color + ";left:0px;top:5px;margin-right:5px;user-select:none;";
+                    // Append the new element to the existing element
+                    element2.prepend(newElement2); 
+                });
+            }
+
+
+            function graph() {
+                var canvas = document.getElementById("grapher");
+                canvas.fillrect(0,2,3,3);
+            }
+
+        </script>
+
+        <titlebar><i>Welcome to Minefan07's page!</i></titlebar>
+        <data>
+            <bigheading>Hi, I'm Minefan07.</bigheading>
+            <heading>What I'm making:</heading>
+            <btext>Here are some links to fun goodies I've made in the past. You'll notice <i>this</i> page may look somewhat different, and that's because my latest project is to create a universal formatting scheme for all of my webpages. My attempts at a unified UI are out of pure curiosity to see what'll happen, and to learn along the way. Additionally, I plan to create an editor to allow for an ease of creation of my pages. Finally, I call my special UI the mUI, or Macro User Interface.</btext>
+            <heading>My attempt at Windows 11 in HTML</heading>
+            <btext>Some time ago, I saw someone had made Windows 11 in React, and decided to give it a try myself.<br>Here's how far I got: <a href="https://minefan07.github.io/windows11inhtml" target="_blank">Windows 11 in HTML</a></btext>
+            <heading>Here's a Rickroll:</heading>
+            <btext><a href="https://minefan07.github.io/rr" target="_blank">Rickroll</a></btext>
+            <heading>I made some Minecraft Music Players:</heading>
+            <btext><i><a href="https://minefan07.github.io/mcmp" target="_blank">Minecraft Music Player (deprecated)</a></i><br>
+            <a href="https://minefan07.github.io/jukebox" target="_blank">Jukebox (MCMP 2.0)</a></btext>
+            <heading>Test your math skills!</heading>
+            <a href="https://minefan07.github.io/smt" target="_blank">Simple Multiplication Tester</a><br>
+        </data>
     </body>
 </html>
